@@ -1,5 +1,5 @@
 # Use a base image with Java and Maven pre-installed
-FROM maven:3.8.2-openjdk-17-slim AS build
+FROM adoptopenjdk:17-jre-hotspot AS build
 
 # Set the working directory in the container
 WORKDIR /app
@@ -16,7 +16,7 @@ RUN rm -rf ~/.m2/repository
 RUN mvn package
 
 # Use a lightweight base image for the final image
-FROM openjdk:17-jre-slim
+FROM adoptopenjdk:17-jre-hotspot
 
 # Set the working directory in the container
 WORKDIR /app
