@@ -12,6 +12,7 @@ RUN mvn dependency:go-offline
 COPY src ./src
 
 # Build the application
+RUN rm -rf ~/.m2/repository
 RUN mvn package
 
 # Use a lightweight base image for the final image
