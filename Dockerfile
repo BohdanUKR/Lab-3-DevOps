@@ -21,7 +21,7 @@ FROM openjdk:11-jre-slim
 WORKDIR /app
 
 # Copy the JAR file from the build stage
-COPY --from=build /app/target/your-webapp.jar .
+COPY --from=build /app/target/Lab2-Q3_DevOps.jar .
 
 # Expose the port your web application listens on
 EXPOSE 8080
